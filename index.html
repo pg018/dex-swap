@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Swap Calculator</title>
+  </head>
+  <body>
+    <header class="m-2 px-2">
+      <nav class="flex flex-row items-center justify-between">
+        <div>
+          <a class="font-bold" href="#">DEX Aggregator</a>
+        </div>
+        <ul class="ml-auto list-none">
+          <li>
+            <button
+              id="login_button"
+              class="p-2 text-blue-500 hover:text-white hover:bg-blue-500 border-blue-500 border-solid border-2 rounded transition"
+              type="submit"
+            >
+              Sign in with MetaMask
+            </button>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <div class="flex flex-col items-center justify-center">
+        <div class="bg-blue-700 rounded mb-3">
+          <div id="account_list"></div>
+        </div>
+        <div class="flex flex-col gap-4 bg-blue-700 p-4 rounded">
+          <h3 class="font-bold">Swap</h3>
+          <div
+            class="grid grid-cols-2 border-solid border-2 rounded border-gray-700 bg-gray-700 p-4"
+          >
+            <div class="cursor-pointer flex flex-row items-center">
+              <select class="rounded p-1 font-bold" id="from_token_select">
+                <option value="">SELECT TOKEN</option>
+                <option value="ETH">ETH</option>
+                <option value="LINK">LINK</option>
+                <option value="BTC">BTC</option>
+                <option value="USDC">USDC</option>
+              </select>
+            </div>
+            <div>
+              <input
+                class="number px-2 rounded text-black p-1"
+                placeholder="Amount"
+                id="from_amount"
+                value="1"
+              />
+            </div>
+          </div>
+          <div
+            class="grid grid-cols-2 border-solid border-2 rounded border-gray-700 bg-gray-700 p-4"
+          >
+            <div class="cursor-pointer flex flex-row items-center">
+              <select class="rounded p-1 font-bold" id="to_token_select">
+                <option value="">SELECT TOKEN</option>
+                <option value="ETH">ETH</option>
+                <option value="LINK">LINK</option>
+                <option value="BTC">BTC</option>
+                <option value="USDC">USDC</option>
+              </select>
+            </div>
+            <div>
+              <input
+                class="number px-2 rounded text-black p-1"
+                placeholder="Amount"
+                id="to_amount"
+                disabled
+              />
+            </div>
+          </div>
+          <button
+            class="bg-[#040406] p-2 rounded transition hover:bg-green-700 text-white"
+            id="swap_button"
+          >
+            Swap
+          </button>
+        </div>
+      </div>
+    </main>
+  </body>
+  <script src="./constants.js"></script>
+  <script src="./bundle.js"></script>
+</html>
